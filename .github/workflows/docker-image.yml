@@ -28,7 +28,7 @@ jobs:
           # Docker repository owner
           repoOwner: ${{ secrets.DOCKER_USERNAME }}
           # Docker repository
-          repository: ${{ github.repository }}
+          repository: tailscale-caddy-proxy
           # Docker image tag
           tag: latest
           # Registry you want to push the Docker image

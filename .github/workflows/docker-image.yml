@@ -3,6 +3,9 @@ name: Build and Push Docker Image to Docker Hub
 on:
   release:
     types: [published]
+  push:
+    branches:
+      - 'main'
 
 jobs:
   push_to_registry:

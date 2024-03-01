@@ -4,6 +4,9 @@ trap 'kill -TERM $PID' TERM INT
 echo "This is Tailscale-Caddy-proxy version"
 tailscale --version
 
+echo "Make Tailscale auto-update itself"
+tailscale --auto-update
+
 echo "Building Caddy configfile"
 
 echo $TS_HOSTNAME'.'$TS_TAILNET.'ts.net' > /etc/caddy/Caddyfile

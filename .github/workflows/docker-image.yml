@@ -9,26 +9,23 @@ jobs:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repo
-        uses: actions/checkout@v4
-
-      - name: Log in to Docker Hub
-        uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
+      - name: Docker Login, Build, Tag & Push Action
+        uses: dinushchathurya/build-tag-push-action@v1.2.1
         with:
+          # Username to connect to Docker registry
           username: ${{ secrets.DOCKER_USERNAME }}
+          # Password to connect to Docker registry
           password: ${{ secrets.DOCKER_PASSWORD }}
-
-      - name: Extract metadata (tags, labels) for Docker
-        id: meta
-        uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
-        with:
-          images: my-docker-hub-namespace/my-docker-hub-repository
-
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v4
-        with:
+          # Docker build context
           context: /
-          file: /Dockerfile
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          # Docker build file
+          file: Dockerfile
+          # Docker repository owner
+          repoOwner: ${{ secrets.DOCKER_USERNAME }}
+          # Docker repository
+          repository: ${{ github.repository }}
+          # Docker image tag
+          tag: latest
+          # Registry you want to push the Docker image
+          # registry: # optional
+          

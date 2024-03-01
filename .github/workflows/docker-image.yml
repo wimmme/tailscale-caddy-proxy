@@ -20,9 +20,9 @@ jobs:
           # Password to connect to Docker registry
           password: ${{ secrets.DOCKER_PASSWORD }}
           # Docker build context
-          context: /
+          context: .
           # Docker build file
-          file: /Dockerfile
+          file: Dockerfile
           # Docker repository owner
           repoOwner: ${{ secrets.DOCKER_USERNAME }}
           # Docker repository

@@ -22,7 +22,7 @@ jobs:
           # Docker build context
           context: /
           # Docker build file
-          file: Dockerfile
+          file: /Dockerfile
           # Docker repository owner
           repoOwner: ${{ secrets.DOCKER_USERNAME }}
           # Docker repository

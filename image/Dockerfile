@@ -1,6 +1,6 @@
-ARG TAILSCALE_VERSION=v1.58.2
+ARG TAILSCALE_VERSION=latest
 
-FROM tailscale/tailscale:$TAILSCALE_VERSION
+FROM tailscale/tailscale:latest
 
 LABEL maintainer="hollie@lika.be"
 

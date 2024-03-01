@@ -15,7 +15,7 @@ services:
      - tailscale_proxy_example
 
   tailscale-whoami-proxy:
-    image: hollie/tailscale-caddy-proxy:latest
+    image: wimmme/tailscale-caddy-proxy:latest
     volumes:
       - tailscale-whoami-state:/var/lib/tailscale # Persist the tailscale state directory
     environment:

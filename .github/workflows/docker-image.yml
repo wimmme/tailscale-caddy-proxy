@@ -12,6 +12,8 @@ jobs:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Docker Login, Build, Tag & Push Action
         uses: dinushchathurya/build-tag-push-action@v1.2.1
         with:

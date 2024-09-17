@@ -14,6 +14,7 @@ ENV TS_AUTH_ONCE=true
 
 RUN apk update && apk upgrade --no-cache && apk add --no-cache ca-certificates mailcap caddy
 RUN caddy upgrade
+RUN tailscale update --yes
 
 # Ensure Caddy can access the tailscale socket, Caddy expects it to be under /var/run/tailscale so make a symlink
 RUN mkdir --parents /var/run/tailscale && ln -s /tmp/tailscaled.sock /var/run/tailscale/tailscaled.sock

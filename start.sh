@@ -7,6 +7,9 @@ tailscale --version
 echo "Make Tailscale auto-update itself"
 tailscale --auto-update
 
+echo "Tailscale update"
+tailscale update --yes
+
 echo "Building Caddy configfile"
 
 echo $TS_HOSTNAME'.'$TS_TAILNET.'ts.net' > /etc/caddy/Caddyfile
